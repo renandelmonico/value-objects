@@ -1,0 +1,23 @@
+{
+    "$schema": "vendor/infection/infection/resources/schema.json",
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "mutators": {
+        "@default": true,
+        "PublicVisibility": {
+            "ignore": [
+                "RenanDelmonico\\Vo\\ValueObjectBehaviors::eq"
+            ]
+        }
+    },
+    "phpUnit": {
+        "configDir": "."
+    },
+    "tmpDir": ".",
+    "logs": {
+        "text": "infection.txt"
+    }
+}
