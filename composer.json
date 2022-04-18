@@ -2,6 +2,7 @@
     "name": "renandelmonico/value-objects",
     "description": "A library with VOs to agreggate in your projects",
     "keywords": ["vo", "value", "objects", "object"],
+    "homepage": "https://github.com/renandelmonico/value-objects",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -10,9 +11,10 @@
             "email": "renandelmonico@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=8.1"
+    },
     "require-dev": {
-        "php": "^8.1",
         "phpunit/phpunit": "^9.5",
         "infection/infection": "^0.26.6"
     },
