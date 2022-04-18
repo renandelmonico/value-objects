@@ -30,10 +30,12 @@ make doc-generate
 - City
 - Email
 - Integer
+- IP (IPv4 and IPv6)
 - Numeric
 - Password
 - Str
 - Text
+- UUID
 
 ## Enums
 
@@ -43,10 +45,10 @@ make doc-generate
 
 ## Pull Requests
 
-Before you submit a Pull Request you must run the unit and mutation tests.
+Before you submit a Pull Request you must run the unit and mutation tests and check if the coverage is 100%.
 
 ### How?
 
-There are two commands in Makefile (`test-unit` and `test-mutation`). You must run both commands.
+There are three commands in Makefile (`test-unit`, `test-mutation` and `test-coverage`). You must run this commands.
 
 > Please, rate this lib ❤️ and give stars ⭐
