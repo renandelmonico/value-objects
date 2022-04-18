@@ -1,5 +1,11 @@
 # Value Objects Library
 
+![Packagist Downloads](https://img.shields.io/packagist/dt/renandelmonico/value-objects)
+![Packagist Stars](https://img.shields.io/packagist/stars/renandelmonico/value-objects)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/renandelmonico/value-objects)
+![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/renandelmonico/value-objects)
+![Packagist License](https://img.shields.io/packagist/l/renandelmonico/value-objects)
+
 A lib to aggregate in your projects with most commons VO's.
 
 > Produced by Renan Delmonico to use in his projects
