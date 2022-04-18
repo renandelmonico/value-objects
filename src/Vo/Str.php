@@ -8,6 +8,13 @@ class Str implements ValueObjectContract
 
     public readonly string $value;
 
+    /**
+     * @param string $value
+     * @param integer $length
+     * @param boolean $allowEmpty
+     * @throws TooLongValueException
+     * @throws InvalidVoException
+     */
     public function __construct(string $value, int $length = 255, bool $allowEmpty = false)
     {
         if (!$this->validate($value, $length, $allowEmpty)) {
@@ -21,6 +28,13 @@ class Str implements ValueObjectContract
         $this->value = $value;
     }
 
+    /**
+     * @param string $value
+     * @param integer $length
+     * @param boolean $allowEmpty
+     * @return boolean
+     * @throws TooLongValueException
+     */
     private function validate(string $value, int $length, bool $allowEmpty): bool
     {
         if (strlen($value) > $length) {
@@ -38,6 +52,9 @@ class Str implements ValueObjectContract
         return true;
     }
 
+    /**
+     * @return string
+     */
     public function getValue(): string
     {
         return $this->value;

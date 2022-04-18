@@ -8,6 +8,11 @@ class Text implements ValueObjectContract
 
     public readonly string $value;
 
+    /**
+     * @param string $value
+     * @param boolean $allowEmpty
+     * @throws InvalidVoException
+     */
     public function __construct(string $value, bool $allowEmpty = false)
     {
         if (!$this->validate($value, $allowEmpty)) {
@@ -21,6 +26,11 @@ class Text implements ValueObjectContract
         $this->value = $value;
     }
 
+    /**
+     * @param string $value
+     * @param boolean $allowEmpty
+     * @return boolean
+     */
     private function validate(string $value, bool $allowEmpty): bool
     {
         if (!$allowEmpty && strlen($value) === 0) {
@@ -30,6 +40,9 @@ class Text implements ValueObjectContract
         return true;
     }
 
+    /**
+     * @return string
+     */
     public function getValue(): string
     {
         return $this->value;

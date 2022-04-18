@@ -2,3 +2,4 @@ infection/
 infection.txt
 .phpunit.result.cache
 vendor/
+.phpdoc

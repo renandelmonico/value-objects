@@ -2,13 +2,17 @@
 
 namespace RenanDelmonico\Vo;
 
-use RenanDelmonico\Vo\CountryEnum;
 use RenanDelmonico\Vo\Brazil\StateEnum;
 
 class City implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
+    /**
+     * @param Str $city
+     * @param StateEnum $state
+     * @param CountryEnum $country
+     */
     public function __construct(
         private readonly Str $city,
         private readonly StateEnum $state,
@@ -16,6 +20,9 @@ class City implements ValueObjectContract
     )
     {}
 
+    /**
+     * @return string
+     */
     public function getValue(): string
     {
         return sprintf(
@@ -26,16 +33,25 @@ class City implements ValueObjectContract
         );
     }
 
+    /**
+     * @return string
+     */
     public function getCity(): string
     {
         return $this->city->getValue();
     }
 
+    /**
+     * @return string
+     */
     public function getState(): string
     {
         return $this->state->name;
     }
 
+    /**
+     * @return string
+     */
     public function getCountry(): string
     {
         return $this->country->value;

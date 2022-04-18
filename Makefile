@@ -7,5 +7,8 @@ test-unit:
 composer-install:
 	docker run --rm --interactive --tty --volume $(shell pwd):/app composer install
 
+doc-generate:
+	docker run --rm -v $(shell pwd):/data phpdoc/phpdoc run -d src --sourcecode --visibility=public,protected --title=renandelmonico/value-objects
+
 docker-build-image:
 	docker build -t value-objects .

@@ -2,15 +2,18 @@
 
 namespace RenanDelmonico\Vo;
 
-use RenanDelmonico\Vo\City;
-use RenanDelmonico\Vo\Str;
-use RenanDelmonico\Vo\ValueObjectBehaviors;
-use RenanDelmonico\Vo\ValueObjectContract;
-
 class Address implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
+    /**
+     * @param Str $street
+     * @param Str $number
+     * @param Str $district
+     * @param Str $zipCode
+     * @param City $city
+     * @param Str|null $complement
+     */
     public function __construct(
         private readonly Str $street,
         private readonly Str $number,
@@ -21,6 +24,9 @@ class Address implements ValueObjectContract
     )
     {}
 
+    /**
+     * @return string
+     */
     public function getValue(): string
     {
         return sprintf(
@@ -33,31 +39,49 @@ class Address implements ValueObjectContract
         );
     }
 
+    /**
+     * @return string
+     */
     public function getStreet(): string
     {
         return $this->street->getValue();
     }
 
+    /**
+     * @return string
+     */
     public function getNumber(): string
     {
         return $this->number->getValue();
     }
 
+    /**
+     * @return string
+     */
     public function getDistrict(): string
     {
         return $this->district->getValue();
     }
 
+    /**
+     * @return string
+     */
     public function getZipCode(): string
     {
         return $this->zipCode->getValue();
     }
 
+    /**
+     * @return City
+     */
     public function getCity(): City
     {
         return $this->city;
     }
 
+    /**
+     * @return string|null
+     */
     public function getComplement(): string|null
     {
         return $this->complement?->getValue();

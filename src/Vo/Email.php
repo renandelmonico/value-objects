@@ -8,6 +8,10 @@ class Email implements ValueObjectContract
 
     private readonly string $value;
 
+    /**
+     * @param string $value
+     * @throws InvalidVoException
+     */
     public function __construct(string $value)
     {
         if (!$this->validate($value)) {
@@ -21,6 +25,10 @@ class Email implements ValueObjectContract
         $this->value = $value;
     }
 
+    /**
+     * @param string $email
+     * @return boolean
+     */
     private function validate(string $email): bool
     {
         $isValid = filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -32,6 +40,9 @@ class Email implements ValueObjectContract
         return true;
     }
 
+    /**
+     * @return string
+     */
     public function getValue(): string
     {
         return $this->value;

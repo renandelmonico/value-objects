@@ -8,6 +8,13 @@ class Password implements ValueObjectContract
 
     private readonly string $value;
 
+    /**
+     * @param string $value
+     * @param PasswordAlgoEnum $algo
+     * @param integer $minChars
+     * @param array $options
+     * @throws InvalidVoException
+     */
     public function __construct(
         string $value,
         PasswordAlgoEnum $algo = PasswordAlgoEnum::ARGON2ID,
@@ -24,6 +31,11 @@ class Password implements ValueObjectContract
         $this->value = password_hash($value, $algo->value, $options);
     }
 
+    /**
+     * @param string $password
+     * @param integer $minChars
+     * @return boolean
+     */
     private function validate(string $password, int $minChars): bool
     {
         $isValid = strlen($password) >= $minChars;
@@ -35,16 +47,26 @@ class Password implements ValueObjectContract
         return true;
     }
 
+    /**
+     * @return string
+     */
     public function getValue(): string
     {
         return $this->value;
     }
 
+    /**
+     * @param string $password
+     * @return boolean
+     */
     public function isValid(string $password): bool
     {
         return password_verify($password, $this->getValue());
     }
 
+    /**
+     * @return PasswordAlgoEnum
+     */
     public function getAlgo(): PasswordAlgoEnum
     {
         $algo = password_get_info($this->getValue())['algo'];
