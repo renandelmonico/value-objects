@@ -7,6 +7,7 @@ A lib to aggregate in your projects with most commons VO's.
 # Summary
 
 - [What's Value Objects](#whats-value-objects)
+- [Documentation](#documentation)
 - [Value Objects](#value-objects)
 - [Enums](#enums)
 - [Pull Requests](#pull-requests)
