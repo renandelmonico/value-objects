@@ -14,9 +14,9 @@ class City implements ValueObjectContract
      * @param CountryEnum $country
      */
     public function __construct(
-        private readonly Str $city,
-        private readonly StateEnum $state,
-        private readonly CountryEnum $country
+        public readonly Str $city,
+        public readonly StateEnum $state,
+        public readonly CountryEnum $country
     )
     {}
 

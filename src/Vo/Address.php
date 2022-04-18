@@ -15,12 +15,12 @@ class Address implements ValueObjectContract
      * @param Str|null $complement
      */
     public function __construct(
-        private readonly Str $street,
-        private readonly Str $number,
-        private readonly Str $district,
-        private readonly Str $zipCode,
-        private readonly City $city,
-        private readonly ?Str $complement = null
+        public readonly Str $street,
+        public readonly Str $number,
+        public readonly Str $district,
+        public readonly Str $zipCode,
+        public readonly City $city,
+        public readonly ?Str $complement = null
     )
     {}
 

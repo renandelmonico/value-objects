@@ -6,7 +6,7 @@ class Password implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
-    private readonly string $value;
+    public readonly string $value;
 
     /**
      * @param string $value
