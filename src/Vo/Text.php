@@ -2,6 +2,8 @@
 
 namespace RenanDelmonico\Vo;
 
+use RenanDelmonico\Vo\Exception\InvalidVoException;
+
 class Text implements ValueObjectContract
 {
     use ValueObjectBehaviors;

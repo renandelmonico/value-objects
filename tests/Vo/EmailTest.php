@@ -2,9 +2,9 @@
 
 namespace Test\Vo;
 
-use RenanDelmonico\Vo\Email;
-use RenanDelmonico\Vo\InvalidVoException;
 use PHPUnit\Framework\TestCase;
+use RenanDelmonico\Vo\Email;
+use RenanDelmonico\Vo\Exception\InvalidVoException;
 
 class EmailTest extends TestCase
 {
