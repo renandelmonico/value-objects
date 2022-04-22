@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-interface ValueObjectContract
+interface ValueObjectContract extends Immutable
 {
     /**
      * @return mixed

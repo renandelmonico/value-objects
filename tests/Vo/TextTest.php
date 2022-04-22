@@ -2,12 +2,12 @@
 
 namespace Test\Vo;
 
+use PHPUnit\Framework\TestCase;
+use RenanDelmonico\Vo\Exception\InvalidVoException;
 use RenanDelmonico\Vo\Integer;
-use RenanDelmonico\Vo\InvalidVoException;
 use RenanDelmonico\Vo\Str;
 use RenanDelmonico\Vo\Text;
 use RenanDelmonico\Vo\ValueObjectContract;
-use PHPUnit\Framework\TestCase;
 
 class TextTest extends TestCase
 {

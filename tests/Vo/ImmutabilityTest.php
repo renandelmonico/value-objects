@@ -2,33 +2,61 @@
 
 namespace Test\Vo;
 
-
 use PHPUnit\Framework\TestCase;
+use RenanDelmonico\Vo\Address;
+use RenanDelmonico\Vo\Boolean;
+use RenanDelmonico\Vo\Brazil\StateEnum;
+use RenanDelmonico\Vo\City;
+use RenanDelmonico\Vo\CountryEnum;
+use RenanDelmonico\Vo\Email;
+use RenanDelmonico\Vo\Exception\ImmutabilityException;
+use RenanDelmonico\Vo\Integer;
+use RenanDelmonico\Vo\Numeric;
+use RenanDelmonico\Vo\Password;
+use RenanDelmonico\Vo\Str;
 use RenanDelmonico\Vo\Text;
-use RenanDelmonico\Vo\TextImmutable;
+use RenanDelmonico\Vo\ValueObjectContract;
 
 class ImmutabilityTest extends TestCase
 {
     /**
-     * Neste cenário de teste estou comparando se objetos não são iguais isso afirma que o objeto de valor(VO) é mutável.
+     * @param ValueObjectContract $vo
+     * @return void
+     *
+     * @dataProvider valueObjectsImmutable
      */
-    public function testFailImmutableObjectExample(): void
+    public function testValueObjectImmutable(ValueObjectContract $vo): void
     {
-        $example = new Text(value: 'text example');
-        $example->{'newProperty'} = '1234';
+        $this->expectException(exception: ImmutabilityException::class);
+        $this->expectExceptionMessage(message: 'SET_IMMUTABLE_STATE');
 
-        static::assertNotEquals(expected: new Text('text example'), actual: $example);
+        $vo->{'newProperty'} = '1234';
     }
 
     /**
-     * Já nesse assert deixei implementado o cenário que seria mais favorável, que não estariámos deixando
-     * o objeto de valor ser modificado
+     * @return array
      */
-    public function testSuccessImmutableObject(): void
+    public function valueObjectsImmutable(): array
     {
-        $this->expectExceptionMessage(message: 'SET_IMMUTABLE_STATE');
+        return [
+            [
+                new Address(
+                    street: new Str(value: '25 de maio'),
+                    number: new Str(value: '566'),
+                    district: new Str(value: 'district'),
+                    zipCode: new Str(value: '87485000'),
+                    city: new City(city: new Str(value: 'Douradina'), state: StateEnum::PR, country: CountryEnum::BR)
+                )
+            ],
+            [new Boolean(value: true)],
+            [new City(city: new Str(value: 'Ji-Paraná'), state: StateEnum::RO, country: CountryEnum::BR)],
+            [new Email(value: 'teste@gmail.com')],
+            [new Integer(value: 10)],
+            [new Numeric(value: 10.5)],
+            [new Password(value: 'xyz10')],
+            [new Str(value: 'String Immutable')],
+            [new Text(value: 'Text Text Text Immutable Immutable')]
 
-        $textImmutable = new TextImmutable(value: 'text example');
-        $textImmutable->{'newProperty'} = '1234';
+        ];
     }
 }

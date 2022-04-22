@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-use Exception;
+use RenanDelmonico\Vo\Exception\ImmutabilityException;
 
 trait Immutability
 {
@@ -10,11 +10,11 @@ trait Immutability
      * @param string $name
      * @param mixed $value
      * @return void
-     * @throws Exception
+     * @throws ImmutabilityException
      */
     public function __set(string $name, mixed $value): void
     {
-        throw new Exception(message: 'SET_IMMUTABLE_STATE');
+        throw new ImmutabilityException(message: 'SET_IMMUTABLE_STATE');
     }
 
     /**
@@ -28,21 +28,21 @@ trait Immutability
 
     /**
      * @param $key
-     * @throws Exception
+     * @throws ImmutabilityException
      */
     public function __get($key): void
     {
         if (!$this->__isset(name: $key)) {
-            throw new Exception(message: 'GET_UNDEFINED_OF_IMMUTABLE');
+            throw new ImmutabilityException(message: 'GET_UNDEFINED_OF_IMMUTABLE');
         }
     }
 
     /**
      * @param string $name
-     * @throws Exception
+     * @throws ImmutabilityException
      */
     public function __unset(string $name): void
     {
-        throw new Exception(message: 'UNSET_IMMUTABLE');
+        throw new ImmutabilityException(message: 'UNSET_IMMUTABLE');
     }
 }

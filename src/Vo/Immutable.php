@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-interface ValueObjectContractImmutable extends ValueObjectContract
+interface Immutable
 {
     /**
      * @param string $name

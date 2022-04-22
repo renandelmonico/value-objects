@@ -2,10 +2,10 @@
 
 namespace Test\Vo;
 
-use RenanDelmonico\Vo\InvalidVoException;
+use PHPUnit\Framework\TestCase;
+use RenanDelmonico\Vo\Exception\InvalidVoException;
 use RenanDelmonico\Vo\Password;
 use RenanDelmonico\Vo\PasswordAlgoEnum;
-use PHPUnit\Framework\TestCase;
 
 class PasswordTest extends TestCase
 {
