@@ -1,6 +1,6 @@
 <?php
 
-namespace RenanDelmonico\Vo;
+namespace RenanDelmonico\Vo\Exception;
 
 use InvalidArgumentException;
 

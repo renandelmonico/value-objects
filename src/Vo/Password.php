@@ -2,6 +2,8 @@
 
 namespace RenanDelmonico\Vo;
 
+use RenanDelmonico\Vo\Exception\InvalidVoException;
+
 class Password implements ValueObjectContract
 {
     use ValueObjectBehaviors;

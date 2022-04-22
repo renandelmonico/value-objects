@@ -2,6 +2,9 @@
 
 namespace RenanDelmonico\Vo;
 
+use RenanDelmonico\Vo\Exception\InvalidVoException;
+use RenanDelmonico\Vo\Exception\TooLongValueException;
+
 class Str implements ValueObjectContract
 {
     use ValueObjectBehaviors;

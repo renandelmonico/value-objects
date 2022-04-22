@@ -5,14 +5,14 @@ namespace RenanDelmonico\Vo;
 class Integer extends Math
 {
     /**
-     * @param integer $value
+     * @param int $value
      */
     public function __construct(
         public readonly int $value
     ) {}
 
     /**
-     * @return integer
+     * @return int
      */
     public function getValue(): int
     {
@@ -64,7 +64,7 @@ class Integer extends Math
     }
 
     /**
-     * @param integer|float $value
+     * @param int|float $value
      * @return Math
      */
     private function returnValue(int|float $value): Math

@@ -2,11 +2,11 @@
 
 namespace Test\Vo;
 
-use RenanDelmonico\Vo\Integer;
-use RenanDelmonico\Vo\InvalidVoException;
-use RenanDelmonico\Vo\Str;
-use RenanDelmonico\Vo\TooLongValueException;
 use PHPUnit\Framework\TestCase;
+use RenanDelmonico\Vo\Exception\InvalidVoException;
+use RenanDelmonico\Vo\Exception\TooLongValueException;
+use RenanDelmonico\Vo\Integer;
+use RenanDelmonico\Vo\Str;
 
 class StrTest extends TestCase
 {
