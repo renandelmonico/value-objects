@@ -6,6 +6,8 @@ use RenanDelmonico\Vo\ValueObjectContract;
 
 trait ValueObjectBehaviors
 {
+    use Immutability;
+
     /**
      * @param ValueObjectContract $value
      * @return boolean
