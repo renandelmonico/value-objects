@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-class Address implements ValueObjectContract
+readonly class Address implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
@@ -15,12 +15,12 @@ class Address implements ValueObjectContract
      * @param Str|null $complement
      */
     public function __construct(
-        public readonly Str $street,
-        public readonly Str $number,
-        public readonly Str $district,
-        public readonly Str $zipCode,
-        public readonly City $city,
-        public readonly ?Str $complement = null
+        public Str $street,
+        public Str $number,
+        public Str $district,
+        public Str $zipCode,
+        public City $city,
+        public ?Str $complement = null
     )
     {}
 

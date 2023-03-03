@@ -2,11 +2,11 @@
 
 namespace RenanDelmonico\Vo;
 
-abstract class IP implements ValueObjectContract
+readonly abstract class IP implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
-    public readonly string $value;
+    public string $value;
 
     /**
      * @param string $value

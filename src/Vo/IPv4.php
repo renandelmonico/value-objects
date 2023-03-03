@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-class IPv4 extends IP
+readonly class IPv4 extends IP
 {
     /**
      * @param string $value

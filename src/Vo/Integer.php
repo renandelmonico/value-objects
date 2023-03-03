@@ -2,13 +2,13 @@
 
 namespace RenanDelmonico\Vo;
 
-class Integer extends Math
+readonly class Integer extends Math
 {
     /**
      * @param integer $value
      */
     public function __construct(
-        public readonly int $value
+        public int $value
     ) {}
 
     /**

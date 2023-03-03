@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-abstract class Math implements ValueObjectContract
+readonly abstract class Math implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 

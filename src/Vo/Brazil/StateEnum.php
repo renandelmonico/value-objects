@@ -2,7 +2,9 @@
 
 namespace RenanDelmonico\Vo\Brazil;
 
-enum StateEnum
+use RenanDelmonico\Vo\StateEnum as StateEnumInterface;
+
+enum StateEnum implements StateEnumInterface
 {
     case AC;
     case AL;

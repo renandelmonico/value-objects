@@ -2,11 +2,11 @@
 
 namespace RenanDelmonico\Vo;
 
-class Text implements ValueObjectContract
+readonly class Text implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
-    public readonly string $value;
+    public string $value;
 
     /**
      * @param string $value

@@ -2,11 +2,11 @@
 
 namespace RenanDelmonico\Vo;
 
-class Email implements ValueObjectContract
+readonly class Email implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
-    public readonly string $value;
+    public string $value;
 
     /**
      * @param string $value

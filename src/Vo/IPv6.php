@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-class IPv6 extends IP
+readonly class IPv6 extends IP
 {
     /**
      * @param string $value

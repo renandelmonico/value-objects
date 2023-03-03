@@ -5,11 +5,11 @@ namespace RenanDelmonico\Vo;
 use Ramsey\Uuid\Uuid as UuidGenerator;
 use Ramsey\Uuid\UuidInterface;
 
-class UUID implements ValueObjectContract
+readonly class UUID implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
-    public readonly UuidInterface $value;
+    public UuidInterface $value;
 
     /**
      * @param string|null $value
