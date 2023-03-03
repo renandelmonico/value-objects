@@ -21,7 +21,7 @@ class IPv4Test extends TestCase
     public function testShouldThrowErrorToInvalidIPv4(string $ipv4)
     {
         $this->expectException(InvalidVoException::class);
-        $this->expectErrorMessage(sprintf(
+        $this->expectExceptionMessage(sprintf(
             'Invalid value for type %s. Value: \'%s\'',
             IPv4::class,
             $ipv4

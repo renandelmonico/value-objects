@@ -21,7 +21,7 @@ class IPv6Test extends TestCase
     public function testShouldThrowErrorToInvalidIPv6(string $ipv6)
     {
         $this->expectException(InvalidVoException::class);
-        $this->expectErrorMessage(sprintf(
+        $this->expectExceptionMessage(sprintf(
             'Invalid value for type %s. Value: \'%s\'',
             IPv6::class,
             $ipv6

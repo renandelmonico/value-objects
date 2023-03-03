@@ -27,7 +27,7 @@ class UUIDTest extends TestCase
     public function testShouldThrowAnExceptionOnTryCreateWithInvalidUUID()
     {
         $this->expectException(InvalidVoException::class);
-        $this->expectErrorMessage(sprintf(
+        $this->expectExceptionMessage(sprintf(
             'Invalid value for type %s. Value: \'%s\'',
             UUID::class,
             'invalid_uuid'
