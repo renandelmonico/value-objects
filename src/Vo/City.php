@@ -2,9 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-use RenanDelmonico\Vo\Brazil\StateEnum;
-
-class City implements ValueObjectContract
+readonly class City implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
@@ -14,9 +12,9 @@ class City implements ValueObjectContract
      * @param CountryEnum $country
      */
     public function __construct(
-        private readonly Str $city,
-        private readonly StateEnum $state,
-        private readonly CountryEnum $country
+        public Str $city,
+        public StateEnum $state,
+        public CountryEnum $country
     )
     {}
 

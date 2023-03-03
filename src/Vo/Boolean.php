@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-class Boolean implements ValueObjectContract
+readonly class Boolean implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
@@ -10,7 +10,7 @@ class Boolean implements ValueObjectContract
      * @param boolean $value
      */
     public function __construct(
-        public readonly bool $value
+        public bool $value
     )
     {}
 

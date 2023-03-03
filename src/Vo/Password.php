@@ -2,11 +2,11 @@
 
 namespace RenanDelmonico\Vo;
 
-class Password implements ValueObjectContract
+readonly class Password implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
-    private readonly string $value;
+    public string $value;
 
     /**
      * @param string $value

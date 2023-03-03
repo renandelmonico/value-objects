@@ -3,3 +3,5 @@ infection.txt
 .phpunit.result.cache
 vendor/
 .phpdoc
+coverage
+.vscode

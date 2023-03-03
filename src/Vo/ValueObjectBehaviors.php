@@ -2,8 +2,6 @@
 
 namespace RenanDelmonico\Vo;
 
-use RenanDelmonico\Vo\ValueObjectContract;
-
 trait ValueObjectBehaviors
 {
     /**

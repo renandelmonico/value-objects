@@ -2,11 +2,11 @@
 
 namespace RenanDelmonico\Vo;
 
-class Str implements ValueObjectContract
+readonly class Str implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
-    public readonly string $value;
+    public string $value;
 
     /**
      * @param string $value

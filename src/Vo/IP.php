@@ -2,7 +2,7 @@
 
 namespace RenanDelmonico\Vo;
 
-readonly class Email implements ValueObjectContract
+readonly abstract class IP implements ValueObjectContract
 {
     use ValueObjectBehaviors;
 
@@ -10,14 +10,13 @@ readonly class Email implements ValueObjectContract
 
     /**
      * @param string $value
-     * @throws InvalidVoException
      */
     public function __construct(string $value)
     {
         if (!$this->validate($value)) {
             throw new InvalidVoException(sprintf(
                 'Invalid value for type %s. Value: \'%s\'',
-                self::class,
+                get_class($this),
                 $value
             ));
         }
@@ -26,19 +25,10 @@ readonly class Email implements ValueObjectContract
     }
 
     /**
-     * @param string $email
+     * @param string $value
      * @return boolean
      */
-    private function validate(string $email): bool
-    {
-        $isValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-
-        if (!$isValid) {
-            return false;
-        }
-
-        return true;
-    }
+    protected abstract function validate(string $value): bool;
 
     /**
      * @return string

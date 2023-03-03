@@ -2,13 +2,13 @@
 
 namespace RenanDelmonico\Vo;
 
-class Numeric extends Math
+readonly class Numeric extends Math
 {
     /**
      * @param float $value
      */
     public function __construct(
-        public readonly float $value
+        public float $value
     ) {}
 
     /**
