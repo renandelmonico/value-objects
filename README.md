@@ -34,6 +34,7 @@ make doc-generate
 - Address
 - Boolean
 - City
+- DateTime
 - Email
 - Integer
 - IP (IPv4 and IPv6)
