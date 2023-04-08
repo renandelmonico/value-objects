@@ -1,4 +1,8 @@
 version = 1
 
+test_patterns = ["src/**"]
+
+exclude_patterns = ["test/**"]
+
 [[analyzers]]
 name = "php"
